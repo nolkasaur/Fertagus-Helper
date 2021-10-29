@@ -1,0 +1,222 @@
+{
+  "transportes": {
+    "fertagusComboios": {
+      "amora": {
+        "sulNorte": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        },
+        "norteSul": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        }
+      },
+      "corroios": {
+        "sulNorte": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        },
+        "norteSul": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        }
+      },
+      "pragal": {
+        "sulNorte": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        },
+        "norteSul": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        }
+      },
+      "campolide": {
+        "sulNorte": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        },
+        "norteSul": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        }
+      },
+      "seterios": {
+        "sulNorte": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        },
+        "diasUteis": {
+        },
+        "sabados": {
+        },
+        "domingosFeriados": {
+        },
+        "norteSul": "\n"
+      },
+      "entrecampos": {
+        "sulNorte": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        },
+        "norteSul": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        }
+      },
+      "romaareeiro": {
+        "sulNorte": {
+        },
+        "norteSul": {
+          "diasUteis": {
+          },
+          "sabados": {
+          },
+          "domingosFeriados": {
+          }
+        }
+      }
+    },
+    "fertagusAutocarros": {
+      "partidaDeAmora": {
+        "diasUteis": {
+          "hour": [
+            "0520",
+            "0600",
+            "0630",
+            "0645",
+            "0700",
+            "0710",
+            "0720",
+            "0735",
+            "0745",
+            "0755",
+            "0810",
+            "0820",
+            "0830",
+            "0845",
+            "0855",
+            "0905",
+            "0920",
+            "0930",
+            "0945",
+            "1005",
+            "1050",
+            "1110",
+            "1150",
+            "1210",
+            "1250",
+            "1310",
+            "1350",
+            "1410",
+            "1450",
+            "1510",
+            "1550",
+            "1610",
+            "1650",
+            "1710",
+            "1730",
+            "1805",
+            "1820",
+            "1840",
+            "1850",
+            "1910",
+            "1920",
+            "1940",
+            "1950",
+            "2010",
+            "2025",
+            "2100",
+            "2150",
+            "2230",
+            "2300",
+            "2330"
+          ]
+        },
+        "sabados": {
+          "hour": [
+            "0605",
+            "0635",
+            "0705",
+            "0735",
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            }
+          ]
+        },
+        "domingosFeriados": "\n\n"
+      },
+      "partidaDeEstacao": {
+        "diasUteis": {
+        },
+        "sabados": {
+        },
+        "domingosFeriados": {
+        }
+      }
+    }
+  }
+}
