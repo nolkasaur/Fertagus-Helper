@@ -4,107 +4,317 @@
       "amora": {
         "sulNorte": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         },
         "norteSul": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         }
       },
       "corroios": {
         "sulNorte": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         },
         "norteSul": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         }
       },
       "pragal": {
         "sulNorte": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         },
         "norteSul": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         }
       },
       "campolide": {
         "sulNorte": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         },
         "norteSul": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         }
       },
       "seterios": {
         "sulNorte": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         },
         "diasUteis": {
+          "hour": [
+            {
+            },
+            {
+            }
+          ]
         },
         "sabados": {
         },
         "domingosFeriados": {
+          "hour": [
+            {
+            },
+            {
+            }
+          ]
         },
         "norteSul": "\n"
       },
       "entrecampos": {
         "sulNorte": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         },
         "norteSul": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         }
       },
@@ -113,10 +323,28 @@
         },
         "norteSul": {
           "diasUteis": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "sabados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           },
           "domingosFeriados": {
+            "hour": [
+              {
+              },
+              {
+              }
+            ]
           }
         }
       }
@@ -207,14 +435,35 @@
             }
           ]
         },
-        "domingosFeriados": "\n\n"
+        "domingosFeriados": {
+          "hour": {
+          }
+        }
       },
       "partidaDeEstacao": {
         "diasUteis": {
+          "hour": [
+            {
+            },
+            {
+            }
+          ]
         },
         "sabados": {
+          "hour": [
+            {
+            },
+            {
+            }
+          ]
         },
         "domingosFeriados": {
+          "hour": [
+            {
+            },
+            {
+            }
+          ]
         }
       }
     }
