@@ -32,7 +32,6 @@ export default function App() {
     var finalText
 
     var timeNow = new Date()
-    timeNow.setHours(timeNow.getHours()+1)
     timeNow.setSeconds(0)
     timeNow.setMilliseconds(0)
 
@@ -191,7 +190,6 @@ export default function App() {
     for(var x=0; x<listOfHours.length;x++){
       var time = new Date()
       time.setHours(parseInt(listOfHours[x][0] + "" + listOfHours[x][1]))
-      time.setHours(time.getHours()+1)
       time.setMinutes(parseInt(listOfHours[x][2] + "" + listOfHours[x][3]))
       time.setSeconds(0)
       time.setMilliseconds(0)
@@ -227,7 +225,6 @@ export default function App() {
 
       var time = new Date()
       time.setHours(parseInt(listOfHours[0][0] + "" + listOfHours[0][1]))
-      time.setHours(time.getHours()+1)
       time.setMinutes(parseInt(listOfHours[0][2] + "" + listOfHours[0][3]))
       time.setSeconds(0)
       time.setMilliseconds(0)
