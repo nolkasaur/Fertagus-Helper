@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
@@ -9,6 +9,15 @@ export default function App() {
   const [showThirdLevelBtns, setShowThirdLevelBtns] = useState(false);
   const [showFourthLevelBtns, setShowFourthLevelBtns] = useState(false);
   const [showResultArea, setShowResultArea] = useState(false);
+
+  const [res, setRes] = useState(0);
+
+  useEffect(() => {
+    const myInterval = setInterval(() => {
+      setRes(() => calcResult());
+    }, 100);
+    return () => clearInterval(myInterval);
+  }, []);
 
   global.transportType;
   global.whereFrom;
@@ -24,154 +33,160 @@ export default function App() {
 
     var timeNow = new Date()
     timeNow.setHours(timeNow.getHours()+1)
+    timeNow.setSeconds(0)
+    timeNow.setMilliseconds(0)
 
-    if(global.transportType === 'TRAIN'){
-      if(global.whereFrom === 'AMORA'){
-        if(global.whereTo === 'LISBOA'){
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-            listOfHours = customData.transportes.fertagusComboios.amora.sulNorte.diasUteis.hour
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-            listOfHours = customData.transportes.fertagusComboios.amora.sulNorte.sabados.hour
+    function getListOfHours(){
+      if(global.transportType === 'TRAIN'){
+        if(global.whereFrom === 'AMORA'){
+          if(global.whereTo === 'LISBOA'){
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.amora.sulNorte.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.amora.sulNorte.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.amora.sulNorte.domingosFeriados.hour
+            }
           } else {
-            listOfHours = customData.transportes.fertagusComboios.amora.sulNorte.domingosFeriados.hour
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.amora.norteSul.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.amora.norteSul.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.amora.norteSul.domingosFeriados.hour
+            }
+          }
+        } else if(global.whereFrom === 'CORROIOS'){
+          if(global.whereTo === 'LISBOA'){
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.corroios.sulNorte.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.corroios.sulNorte.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.corroios.sulNorte.domingosFeriados.hour
+            }
+          } else {
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.corroios.norteSul.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.corroios.norteSul.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.corroios.norteSul.domingosFeriados.hour
+            }
+          }
+        } else if(global.whereFrom === 'PRAGAL'){
+          if(global.whereTo === 'LISBOA'){
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.pragal.sulNorte.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.pragal.sulNorte.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.pragal.sulNorte.domingosFeriados.hour
+            }
+          } else {
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.pragal.norteSul.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.pragal.norteSul.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.pragal.norteSul.domingosFeriados.hour
+            }
+          }
+        } else if(global.whereFrom === 'CAMPOLIDE'){
+          if(global.whereTo === 'LISBOA'){
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.campolide.sulNorte.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.campolide.sulNorte.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.campolide.sulNorte.domingosFeriados.hour
+            }
+          } else {
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.campolide.norteSul.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.campolide.norteSul.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.campolide.norteSul.domingosFeriados.hour
+            }
+          }
+        } else if(global.whereFrom === 'SETERIOS'){
+          if(global.whereTo === 'LISBOA'){
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.seterios.sulNorte.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.seterios.sulNorte.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.seterios.sulNorte.domingosFeriados.hour
+            }
+          } else {
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.seterios.norteSul.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.seterios.norteSul.diasUteis.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.seterios.norteSul.diasUteis.hour
+            }
+          }
+        } else if(global.whereFrom === 'ENTRECAMPOS'){
+          if(global.whereTo === 'LISBOA'){
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.entrecampos.sulNorte.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.entrecampos.sulNorte.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.entrecampos.sulNorte.domingosFeriados.hour
+            }
+          } else {
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.entrecampos.norteSul.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.entrecampos.norteSul.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.entrecampos.norteSul.domingosFeriados.hour
+            }
           }
         } else {
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-            listOfHours = customData.transportes.fertagusComboios.amora.norteSul.diasUteis.hour
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-            listOfHours = customData.transportes.fertagusComboios.amora.norteSul.sabados.hour
+          if(global.whereTo === 'LISBOA'){
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.romaareeiro.sulNorte.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.romaareeiro.sulNorte.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.romaareeiro.sulNorte.domingosFeriados.hour
+            }
           } else {
-            listOfHours = customData.transportes.fertagusComboios.amora.norteSul.domingosFeriados.hour
+            if(global.dayOfTheWeek === 'WEEKDAY'){
+              listOfHours = customData.transportes.fertagusComboios.romaareeiro.norteSul.diasUteis.hour
+            } else if(global.dayOfTheWeek === 'SATURDAY'){
+              listOfHours = customData.transportes.fertagusComboios.romaareeiro.norteSul.sabados.hour
+            } else {
+              listOfHours = customData.transportes.fertagusComboios.romaareeiro.norteSul.domingosFeriados.hour
+            }
           }
-        }
-      } else if(global.whereFrom === 'CORROIOS'){
-        if(global.whereTo === 'LISBOA'){
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        } else {
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        }
-      } else if(global.whereFrom === 'PRAGAL'){
-        if(global.whereTo === 'LISBOA'){
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        } else {
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        }
-      } else if(global.whereFrom === 'CAMPOLIDE'){
-        if(global.whereTo === 'LISBOA'){
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        } else {
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        }
-      } else if(global.whereFrom === 'SETERIOS'){
-        if(global.whereTo === 'LISBOA'){
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        } else {
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        }
-      } else if(global.whereFrom === 'ENTRECAMPOS'){
-        if(global.whereTo === 'LISBOA'){
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        } else {
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        }
-      } else {
-        if(global.whereTo === 'LISBOA'){
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        } else {
-          if(global.dayOfTheWeek === 'WEEKDAY'){
-
-          } else if(global.dayOfTheWeek === 'SATURDAY'){
-
-          } else {
-            
-          }
-        }
-      }
-    } else {
-      if(global.whereFrom === 'AMORA'){
-        if(global.dayOfTheWeek === 'WEEKDAY'){
-          listOfHours = customData.transportes.fertagusAutocarros.partidaDeAmora.diasUteis.hour
-        } else if(global.dayOfTheWeek === 'SATURDAY'){
-          listOfHours = customData.transportes.fertagusAutocarros.partidaDeAmora.sabados.hour
-        } else {
-          listOfHours = customData.transportes.fertagusAutocarros.partidaDeAmora.domingosFeriados.hour
         }
       } else {
-        if(global.dayOfTheWeek === 'WEEKDAY'){
-          listOfHours = customData.transportes.fertagusAutocarros.partidaDeEstacao.diasUteis.hour
-        } else if(global.dayOfTheWeek === 'SATURDAY'){
-          listOfHours = customData.transportes.fertagusAutocarros.partidaDeEstacao.sabados.hour
+        if(global.whereFrom === 'AMORA'){
+          if(global.dayOfTheWeek === 'WEEKDAY'){
+            listOfHours = customData.transportes.fertagusAutocarros.partidaDeAmora.diasUteis.hour
+          } else if(global.dayOfTheWeek === 'SATURDAY'){
+            listOfHours = customData.transportes.fertagusAutocarros.partidaDeAmora.sabados.hour
+          } else {
+            listOfHours = customData.transportes.fertagusAutocarros.partidaDeAmora.domingosFeriados.hour
+          }
         } else {
-          listOfHours = customData.transportes.fertagusAutocarros.partidaDeEstacao.domingosFeriados.hour
+          if(global.dayOfTheWeek === 'WEEKDAY'){
+            listOfHours = customData.transportes.fertagusAutocarros.partidaDeEstacao.diasUteis.hour
+          } else if(global.dayOfTheWeek === 'SATURDAY'){
+            listOfHours = customData.transportes.fertagusAutocarros.partidaDeEstacao.sabados.hour
+          } else {
+            listOfHours = customData.transportes.fertagusAutocarros.partidaDeEstacao.domingosFeriados.hour
+          }
         }
       }
     }
+
+    getListOfHours()
 
     for(var x=0; x<listOfHours.length;x++){
       var time = new Date()
@@ -179,20 +194,51 @@ export default function App() {
       time.setHours(time.getHours()+1)
       time.setMinutes(parseInt(listOfHours[x][2] + "" + listOfHours[x][3]))
       time.setSeconds(0)
+      time.setMilliseconds(0)
       if(time >= timeNow){
         finalResult = time - timeNow
         break
       }
     }
 
+    {/* calcular o tempo ate ao primeiro transporte do dia seguinte. isto provavelmente vai dar merda, por exemplo em situacoes em que o dia seguinte = feriado. fix in the future TM */}
+    {/* does this even work at all???? please test */}
     if(finalResult === -1){
-      finalText = "Agora só amanhã Zé"
-    } else {
-      var hrs = Math.floor((finalResult / (1000 * 60 * 60)) % 24)
-      var mns = Math.floor((finalResult / (1000 * 60)) % 60)
-  
-      finalText = hrs + " horas e " + mns + " minutos"
+      var weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+      if(weekday[new Date().getDay()] === "saturday"){
+        global.dayOfTheWeek="SATURDAY"
+      } else if(weekday[new Date().getDay()] === "sunday"){
+        global.dayOfTheWeek="SUNDAYHOLIDAY"
+      }
+      
+      getListOfHours()
+
+      var timeMidnight1 = new Date()
+      timeMidnight1.setHours(24)
+      timeMidnight1.setMinutes(0)
+      timeMidnight1.setSeconds(0)
+      timeMidnight1.setMilliseconds(0)
+
+      var timeMidnight2 = new Date()
+      timeMidnight2.setHours(0)
+      timeMidnight2.setMinutes(0)
+      timeMidnight2.setSeconds(0)
+      timeMidnight2.setMilliseconds(0)
+
+      var time = new Date()
+      time.setHours(parseInt(listOfHours[0][0] + "" + listOfHours[0][1]))
+      time.setHours(time.getHours()+1)
+      time.setMinutes(parseInt(listOfHours[0][2] + "" + listOfHours[0][3]))
+      time.setSeconds(0)
+      time.setMilliseconds(0)
+
+      finalResult = (timeMidnight1 - timeNow) + (time - timeMidnight2)
     }
+
+    var hrs = Math.floor((finalResult / (1000 * 60 * 60)) % 24)
+    var mns = Math.floor((finalResult / (1000 * 60)) % 60)
+  
+    finalText = hrs === 0 ? mns === 0 ? "É AGORA, CORRE!" : mns + " minutos" : hrs + " horas e " + mns + " minutos"
 
     return finalText
   }
@@ -204,7 +250,7 @@ export default function App() {
         <Button  onPress={() => {    setShowFirstLevelBtns(false); setShowTrainSecondLevelBtns(true); global.transportType='TRAIN' }} title="FERTAGUS (COMBOIOS)"/>
       </View> : null}
       {showFirstLevelBtns ? <View nativeID="btnBuses" style={styles.buttonBuses}>
-        <Button  onPress={() => {    setShowFirstLevelBtns(false); setShowBusSecondLevelBtns(true); global.transportType='BUS' }} title="SUL-FERTAGUS (AUTOCARROS)"/>
+        <Button  onPress={() => {    setShowFirstLevelBtns(false); setShowBusSecondLevelBtns(true); global.transportType='BUS' }} title="SUL-FERTAGUS (AUTOCARROS 1A)"/>
       </View> : null }
 
       {/* SECOND VIEW - BUS - WHERE FROM */}
@@ -260,7 +306,7 @@ export default function App() {
       {/* RESULT */}
       {showResultArea ? <View nativeID="resultArea" style={styles.resultArea}>
         <Text style={styles.resultTitle}>{global.transportType === 'TRAIN' ? "PRÓXIMO COMBOIO EM" : "PRÓXIMO AUTOCARRO EM"}</Text>
-        <Text style={styles.resultTime}>{calcResult()}</Text>
+        <Text style={styles.resultTime}>{res}</Text>
       </View> : null}
 
       {/* RESET */}
